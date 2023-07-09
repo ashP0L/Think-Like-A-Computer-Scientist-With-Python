@@ -22,6 +22,6 @@ def draw_poly(t, n, sz):
         t.forward(sz)
         t.left(angle)
 
-draw_poly(tess,8,40)
+draw_poly(tess,12,40)
 
 turtle.done()

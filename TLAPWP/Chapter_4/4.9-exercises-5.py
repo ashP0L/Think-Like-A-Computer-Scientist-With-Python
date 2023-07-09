@@ -17,7 +17,7 @@ def spiralrotate(functurt, n):
     angle = 90
     for i in range(n):
         x = x+2.5
-        angle = angle +.005
+        angle = angle +
         functurt.right(angle)
         functurt.forward(x)
 
