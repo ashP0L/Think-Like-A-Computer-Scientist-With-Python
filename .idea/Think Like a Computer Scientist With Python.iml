@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/Chapters/Chapter_3/bin" />
       <excludeFolder url="file://$MODULE_DIR$/Chapters/Chapter_4/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/TLAPWP/Chapter_3/bin" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

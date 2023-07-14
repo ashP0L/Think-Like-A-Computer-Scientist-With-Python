@@ -6,7 +6,7 @@ turt.color("blue")
 turt.width(4)
 turt.fillcolor("red")
 # Graph values
-graphValue = [100,50, 20, 5, 100, 77, 54]
+graphValue = [100,50, 20, 5, 100, 77, 54, 99999]
 
 # For drawGraph, I think I need to define parameters turtle and height
 
