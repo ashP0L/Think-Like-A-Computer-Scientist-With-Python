@@ -3,6 +3,7 @@
 # version of the program which asks for the starting day number, and the length of your
 # stay, and it will tell you the name of day of the week you will return on.
 
+# init array elements for printing
 days = [0, 1, 2, 3, 4, 5, 6, 7]
 days[1] = "Monday"
 days[2] = "Tuesday"
@@ -24,12 +25,20 @@ def number_of_days(totaltime,startday):
 
 def mainloop():
     start_day_input = int(input(" \nThis program calculates which day you will arrive home.\n\nChoose the day of your departure:\n\t 1: Monday\n\t 2: Tuesday \n\t 3: Wednesday \n\t 4: Thursday \n\t 5: Friday \n\t 6: Saturday \n\t 7: Sunday \n"))
-    #type safety
-    if start_day_input == type(int):
-
     startday = days[start_day_input]
-    nights = int(input("How many nights is your stay? \n"))
 
+    if (start_day_input >= 1) or (start_day_input <= 7):
+        pass
+    else:
+        print("Please type the number (1-7) corresponding to the week day.")
+        return
+
+    nights = int(input("How many nights is your stay? \n"))
+    if startday != type(int):
+        pass
+    else:
+        print("Please type the number of nights you plan on staying. ")
+        return
     number_of_days(nights, start_day_input)
 
 mainloop()
