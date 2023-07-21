@@ -10,7 +10,7 @@ turt.fillcolor("red")
 turt.hideturtle()
 turt.speed(10)
 # Graph values
-graphValue = [100, 50, 20, 5, 100, 77, 54]
+graphValue = [100, 50, 20, 5, 100, 77, 54, 200, 205, 100]
 
 # For drawGraph, I think I need to define parameters turtle and height
 
