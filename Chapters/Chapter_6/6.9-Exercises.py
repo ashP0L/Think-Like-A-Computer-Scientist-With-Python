@@ -133,7 +133,10 @@ def day_add(day,x):
     else:
         return None
     #Mod weekday
-    y = ((d + x) % 7)
+    if x >= 0:
+        y = (d + x) % 7
+    else:
+        y = abs((abs(d + x) % 7) - 7)
     return day_print(y)
 
 print("\nStarting test for day_add and day_print")
@@ -141,8 +144,12 @@ print("\nStarting test for day_add and day_print")
 test(day_add("Monday", 4) == "Friday")
 test(day_add("Tuesday", 0) == "Tuesday")
 test(day_add("Tuesday", 14) == "Tuesday")
-test(day_add("Sunday", 100) == "Tuesday")
-test(day_add("Sunday", -100) == "Sunday")
-
+test(day_add("Tuesday", -7) == "Tuesday")
+test(day_add("Tuesday", -7) == "Tuesday")
+test(day_add("Monday", -7) == "Tuesday")
+test(day_add("Rubbish", -7) == "Tuesday")
 
 print("\nTesting completed for day_add and day_print\n\n")
+
+
+
