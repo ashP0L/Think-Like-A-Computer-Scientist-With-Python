@@ -242,7 +242,15 @@ print("\nTesting completed for test_to_sec_2\n")
 def hours_in(s):
     return int(s/3600)
 
-def minutes_in
+def minutes_in(s):
+    return int((s % 3600) / 60)
+
+def seconds_in(s):
+    x = hours_in(s)
+    y = minutes_in(s)
+    return s % ((x * 3600)+(y * 60))
+
+    print(x,y)
 
 test(hours_in(9010) == 2)
 test(minutes_in(9010) == 30)
