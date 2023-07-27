@@ -1,5 +1,6 @@
 
 # 6.9 exercises
+from math import sqrt
 
 # 1.
 # The four compass points can be abbreviated by single-letter strings as “N”, “E”, “S”, and
@@ -240,10 +241,10 @@ print("\nTesting completed for test_to_sec_2\n")
 
 # 9(a)
 def hours_in(s):
-    return int(s/3600)
+    return s // 3600 # refactored into floor division
 
 def minutes_in(s):
-    return int((s % 3600) / 60)
+    return (s % 3600) // 60 # refactored into floor division
 
 def seconds_in(s):
     x = hours_in(s)
@@ -252,7 +253,83 @@ def seconds_in(s):
 
     print(x,y)
 
+print("\nStarting test for question 9.")
+
 test(hours_in(9010) == 2)
 test(minutes_in(9010) == 30)
-test(seconds_in(9010) == 10)    
+test(seconds_in(9010) == 10)
 
+print("\nTest for question 9 completed.")
+
+# 10. Which of these tests fail? Explain why.
+print("\nStarting tests for question 10.\n")
+
+test(3 % 4 == 0) # T
+test(3 % 4 == 3) # T 3 - {(3/4} * 4
+test(3 / 4 == 0) # F 3
+test(3 // 4 == 0) # T - floor division = return 0
+test(3+4 * 2 == 14) # F
+test(4-2+2 == 0) # F
+test(len("hello, world!") == 13) # T
+
+print("\nTesting for question 10 completed.\n")
+
+# 11. Write a compare function that returns 1 if a > b, 0 if a == b, and -1 if a < b
+
+def compare(a,b):
+    if a > b:
+        return 1
+    elif a == b:
+        return 0
+    elif a < b:
+        return -1
+
+print("\nStarting tests for compare\n")
+
+test(compare(5, 4) == 1)
+test(compare(7, 7) == 0)
+test(compare(2, 3) == -1)
+test(compare(42, 1) == 1)
+
+print("\nTesting for compare completed\n")
+
+# 12. Write a function called hypotenuse that returns the length of the hypotenuse of a right
+# triangle given the lengths of the two legs as parameters:
+
+def hypotenuse(a, b):
+    return sqrt((a**2)+(b**2))
+
+print("\nStarting tests for hypotenuse\n")
+
+test(hypotenuse(3, 4) == 5.0)
+test(hypotenuse(12, 5) == 13.0)
+test(hypotenuse(24, 7) == 25.0)
+test(hypotenuse(9, 12) == 15.0)
+
+print("\nTesting for hypotenuse completed\n")
+
+# 13. Write a function slope(x1, y1, x2, y2) that returns the slope of the line through
+# the points (x1, y1) and (x2, y2). Be sure your implementation of slope can pass the
+# following tests:
+
+def slope(x1,y1,x2,y2):
+    return ((y2-y1) / (x2-x1))
+
+print("\nStarting tests for slope\n")
+
+test(slope(5, 3, 4, 2) == 1.0)
+test(slope(1, 2, 3, 2) == 0.0)
+test(slope(1, 2, 3, 3) == 0.5)
+test(slope(2, 4, 1, 2) == 2.0)
+
+print("\nTesting for slope completed\n")
+
+# Then use a call to slope in a new function named intercept(x1, y1, x2, y2)
+# that returns the y-intercept of the line through the points (x1, y1) and (x2, y2)
+
+def intercept(x1,y1,x2,y2):
+    
+
+test(intercept(1, 6, 3, 12) == 3.0)
+test(intercept(6, 1, 1, 6) == 7.0)
+test(intercept(4, 6, 12, 8) == 5.0)
