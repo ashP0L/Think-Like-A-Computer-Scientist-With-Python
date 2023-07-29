@@ -66,6 +66,10 @@ test(weekday(1) == "Monday")
 test(weekday(3) == "Wednesday")
 test(weekday("rubbish") == None)
 test(weekday(42) == None)
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 print("Testing completed for weekday.\n")
 
 #3 Write the inverse function day_num which is given a day name, and returns its number:
@@ -96,6 +100,11 @@ test(weekday(day_num("Wednesday")) == "Wednesday")
 test(day_num("Wrong"))
 print("\nTesting completed for day_num \n")
 
+<<<<<<< HEAD
+=======
+print("\nTesting completed for day_num \n")
+
+>>>>>>> master
 # 4.
 # Write a function that helps answer questions like “‘Today is Wednesday. I leave on
 # holiday in 19 days time. What day will that be?”’ So the function must take a day name
@@ -160,6 +169,7 @@ test(day_add("Monday", -10) == "Friday")
 test(day_add("Friday", -1) == "Thursday")
 print("\nTesting completed for day_add and day_print\n")
 
+<<<<<<< HEAD
 # 6.
 # Write a function days_in_month which takes the name of a month, and returns the
 # number of days in the month. Ignore leap years:
@@ -393,11 +403,98 @@ test(is_factor(1, 15))
 test(is_factor(15, 15))
 test(not is_factor(25, 15))
 print("\nTesting for is_factor completed\n")
+=======
+print("\nTesting completed for day_add and day_print\n")
+>>>>>>> master
 
+# 6.
+# Write a function days_in_month which takes the name of a month, and returns the
+# number of days in the month. Ignore leap years:
 
+<<<<<<< HEAD
 # 17. Write is_multiple to satisfy these unit tests:
 def is_multiple(n, m):
     return is_factor(n, m)
+=======
+def days_in_month(month):
+    if month == "January":
+        return 31
+    elif month == "February":
+        return 28
+    elif month == "March":
+        return 31
+    elif month == "April":
+        return 30
+    elif month == "May":
+        return 31
+    elif month == "June":
+        return 30
+    elif month == "July":
+        return 31
+    elif month == "August":
+        return 31
+    elif month == "September":
+        return 30
+    elif month == "October":
+        return 31
+    elif month == "November":
+        return 30
+    elif month == "December":
+        return 31
+    else:
+        return None
+# test cass
+
+print("\nStarting test for days_in_month\n")
+test(days_in_month("February") == 28)
+test(days_in_month("December") == 31)
+test(days_in_month("Junk") == 31)
+print("\nTesting for days_in_month complete\n")
+
+# 7. Write a function to_secs that converts hours, minutes and seconds to a total number
+# of seconds.
+
+def to_secs(h,m,s):
+    return ((h * 3600) + (m * 60) + (s))
+
+print("\nStarting test for to_secs:\n")
+test(to_secs(2, 30, 10) == 9010)
+test(to_secs(2, 0, 0) == 7200)
+test(to_secs(0, 2, 0) == 120)
+test(to_secs(0, 0, 42) == 42)
+test(to_secs(0, -10, 10) == -590)
+print("\nTesting completed for to_secs\n")
+
+# 8. Extend to_secs so that it can cope with real values as inputs. It should always return
+# an integer number of seconds (truncated towards zero):
+
+def to_secs_2(h,m,s):
+    x = int(((h * 3600) + (m * 60) + (s))) # truncate towards zero with int()
+    return x
+
+print("\nStarting test for test_to_sec_2\n")
+test(to_secs_2(2.5, 0, 10.71) == 9010)
+test(to_secs_2(2.433, 0, 0) == 8758)
+print("\nTesting completed for test_to_sec_2\n")
+
+# 9. Write three functions that are the “inverses” of to_secs:
+# (a) hours_in returns the whole integer number of hours represented by a total num-
+# ber of seconds.
+# (b) minutes_in returns the whole integer number of left over minutes in a total
+# number of seconds, once the hours have been taken out.
+# (c) seconds_in returns the left over seconds represented by a total number of sec-
+# onds.
+
+# 9(a)
+def hours_in(s):
+    return int(s/3600)
+
+def minutes_in
+
+test(hours_in(9010) == 2)
+test(minutes_in(9010) == 30)
+test(seconds_in(9010) == 10)    
+>>>>>>> master
 
 # issue is that the program isn't making it to the else condition. Why??
 # The not statements keep failing even though the operation is correct.
