@@ -5,8 +5,10 @@
       <excludeFolder url="file://$MODULE_DIR$/Chapters/Chapter_3/bin" />
       <excludeFolder url="file://$MODULE_DIR$/Chapters/Chapter_4/bin" />
       <excludeFolder url="file://$MODULE_DIR$/TLAPWP/Chapter_3/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/env" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.11" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

@@ -62,12 +62,10 @@ def weekday(w):
         return None
 
 print("Starting test for weekday... \n")
-
 test(weekday(1) == "Monday")
 test(weekday(3) == "Wednesday")
 test(weekday("rubbish") == None)
 test(weekday(42) == None)
-
 print("Testing completed for weekday.\n")
 
 #3 Write the inverse function day_num which is given a day name, and returns its number:
@@ -91,13 +89,11 @@ def day_num(d):
         return None
 
 print("Starting test for day_num \n")
-
 test(day_num("Friday") == 5)
 test(day_num("Sunday") == 7)
 test(day_num(weekday(3)) == 3) # fruit of day_num and weekday.
 test(weekday(day_num("Wednesday")) == "Wednesday")
 test(day_num("Wrong"))
-
 print("\nTesting completed for day_num \n")
 
 # 4.
@@ -153,7 +149,6 @@ def day_add(day,x):
     return day_print(y)
 
 print("\nStarting test for day_add and day_print\n")
-
 test(day_add("Monday", 4) == "Friday")
 test(day_add("Tuesday", 0) == "Tuesday")
 test(day_add("Tuesday", 14) == "Tuesday")
@@ -163,7 +158,6 @@ test(day_add("Rubbish", -7) == "Tuesday")
 test(day_add("Tuesday", -15) == "Monday")
 test(day_add("Monday", -10) == "Friday")
 test(day_add("Friday", -1) == "Thursday")
-
 print("\nTesting completed for day_add and day_print\n")
 
 # 6.
@@ -254,16 +248,13 @@ def seconds_in(s):
     print(x,y)
 
 print("\nStarting test for question 9.")
-
 test(hours_in(9010) == 2)
 test(minutes_in(9010) == 30)
 test(seconds_in(9010) == 10)
-
 print("\nTest for question 9 completed.")
 
 # 10. Which of these tests fail? Explain why.
 print("\nStarting tests for question 10.\n")
-
 test(3 % 4 == 0) # T
 test(3 % 4 == 3) # T 3 - {(3/4} * 4
 test(3 / 4 == 0) # F 3
@@ -271,7 +262,6 @@ test(3 // 4 == 0) # T - floor division = return 0
 test(3+4 * 2 == 14) # F
 test(4-2+2 == 0) # F
 test(len("hello, world!") == 13) # T
-
 print("\nTesting for question 10 completed.\n")
 
 # 11. Write a compare function that returns 1 if a > b, 0 if a == b, and -1 if a < b
@@ -285,12 +275,10 @@ def compare(a,b):
         return -1
 
 print("\nStarting tests for compare\n")
-
 test(compare(5, 4) == 1)
 test(compare(7, 7) == 0)
 test(compare(2, 3) == -1)
 test(compare(42, 1) == 1)
-
 print("\nTesting for compare completed\n")
 
 # 12. Write a function called hypotenuse that returns the length of the hypotenuse of a right
@@ -300,12 +288,10 @@ def hypotenuse(a, b):
     return sqrt((a**2)+(b**2))
 
 print("\nStarting tests for hypotenuse\n")
-
 test(hypotenuse(3, 4) == 5.0)
 test(hypotenuse(12, 5) == 13.0)
 test(hypotenuse(24, 7) == 25.0)
 test(hypotenuse(9, 12) == 15.0)
-
 print("\nTesting for hypotenuse completed\n")
 
 # 13. Write a function slope(x1, y1, x2, y2) that returns the slope of the line through
@@ -316,20 +302,98 @@ def slope(x1,y1,x2,y2):
     return ((y2-y1) / (x2-x1))
 
 print("\nStarting tests for slope\n")
-
 test(slope(5, 3, 4, 2) == 1.0)
 test(slope(1, 2, 3, 2) == 0.0)
 test(slope(1, 2, 3, 3) == 0.5)
 test(slope(2, 4, 1, 2) == 2.0)
-
 print("\nTesting for slope completed\n")
 
 # Then use a call to slope in a new function named intercept(x1, y1, x2, y2)
 # that returns the y-intercept of the line through the points (x1, y1) and (x2, y2)
 
-def intercept(x1,y1,x2,y2):
-    
+# y = mx + b
+# b = y - mx
 
+def intercept(xs1, ys1 ,xs2 ,ys2):
+    mx = slope(xs1, ys1, xs2, ys2)
+    b = ys1 - (mx * xs1)
+    return b
+
+print("\nStarting tests for intercept\n")
 test(intercept(1, 6, 3, 12) == 3.0)
 test(intercept(6, 1, 1, 6) == 7.0)
 test(intercept(4, 6, 12, 8) == 5.0)
+print("\nTesting for intercept completed\n")
+
+# 14. Write a function called is_even(n) that takes an integer as an argument and returns
+# True if the argument is an even number and False if it is odd.
+# Add your own tests to the test suite.
+
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+print("\nStarting tests for is_even\n")
+test(is_even(4) == True)
+test(is_even(58) == True)
+test(is_even(100) == True)
+test(is_even(12351) == False)
+test(is_even(3) == False)
+print("\nTesting for is_even completed\n")
+
+def is_odd_one(n):
+    if n % 2 == 1:
+        return True
+    else:
+        return False
+
+# 15. Now write the function is_odd(n) that returns True when n is odd and False oth-
+# erwise. Include unit tests for this function too.
+# Finally, modify it so that it uses a call to is_even to determine if its argument is an odd
+# integer, and ensure that its test still pass.
+
+print("\nStarting tests for is_odd_one\n")
+test(is_odd_one(4) == False)
+test(is_odd_one(58) == False)
+test(is_odd_one(100) == False)
+test(is_odd_one(12351) == True)
+test(is_odd_one(3) == True)
+print("\nTesting for is_odd_one completed\n")
+
+def is_odd_two(n):
+    if is_even(n) == True:
+        return False
+    else:
+        return True
+
+print("\nStarting tests for is_odd_two\n")
+test(is_odd_two(4) == False)
+test(is_odd_two(58) == False)
+test(is_odd_two(100) == False)
+test(is_odd_two(12351) == True)
+test(is_odd_two(3) == True)
+print("\nTesting for is_odd_two completed\n")
+
+# 16. Write a function is_factor(f, n) that passes these tests:
+
+def is_factor(f, n):
+    if f % n == 0:
+        return True
+    else:
+        return False
+
+test(is_factor(3, 12))
+test(not is_factor(5, 12))
+test(is_factor(7, 14))
+test(not is_factor(7, 15))
+test(is_factor(1, 15))
+test(is_factor(15, 15))
+test(not is_factor(25, 15))
+
+
+# 17. Write is_multiple to satisfy these unit tests:
+
+
+
