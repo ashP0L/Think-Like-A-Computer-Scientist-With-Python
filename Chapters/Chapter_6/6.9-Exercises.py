@@ -384,6 +384,7 @@ def is_factor(f, n):
     else:
         return False
 
+print("Starting tests for is_factor")
 test(is_factor(3, 12))
 test(not is_factor(5, 12))
 test(is_factor(7, 14))
@@ -391,9 +392,57 @@ test(not is_factor(7, 15))
 test(is_factor(1, 15))
 test(is_factor(15, 15))
 test(not is_factor(25, 15))
+print("\nTesting for is_factor completed\n")
 
 
 # 17. Write is_multiple to satisfy these unit tests:
+def is_multiple(n, m):
+    return is_factor(n, m)
 
+# issue is that the program isn't making it to the else condition. Why??
+# The not statements keep failing even though the operation is correct.
+# Resolved issue by just returning is_factor. is_factor return true and false values,which are accepted by the test unit.
 
+print("\nStarting tests for is_multiple\n")
+test(is_multiple(12, 3))
+test(is_multiple(12, 4))
+test(not is_multiple(12, 5))
+test(is_multiple(12, 6))
+test(not is_multiple(12, 7))
+print("\nTesting for is_multiple completed\n")
 
+#    18. Write the function f2c(t) designed to return the integer value of the nearest degree
+#  Celsius for given temperature in Fahrenheit. (hint: you may want to make use of the
+#    built-in function, round. Try printing round.__doc__ in a Python shell or looking
+#    up help for the round function, and experimenting with it until you are comfortable with
+#   how it works.)
+# (f - 32) * .5556
+
+def f2c(t):
+    return round((t - 32) * .5556)
+
+print("\nStarting tests for f2c\n")
+test(f2c(212) == 100)
+test(f2c(32) == 0)
+test(f2c(-40) == -40)
+test(f2c(36) == 2)
+test(f2c(37) == 3)
+test(f2c(38) == 3)
+test(f2c(39) == 4)
+print("\nTesting for f2c completed\n")
+
+# 19. Now do the opposite: write the function c2f which converts Celsius to Fahrenheit:
+
+def c2f(c):
+    return round((c * 1.8) + 32)
+
+print("\nStarting tests for c2f\n")
+test(c2f(0) == 32)
+test(c2f(100) == 212)
+test(c2f(-40) == -40)
+test(c2f(12) == 54)
+test(c2f(18) == 64)
+test(c2f(-48) == -54)
+print("\nTesting for c2f is completed\n")
+
+#
