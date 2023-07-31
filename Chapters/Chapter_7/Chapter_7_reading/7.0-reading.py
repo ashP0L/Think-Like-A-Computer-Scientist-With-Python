@@ -37,6 +37,7 @@ test(mysum([ ]) == 0)
 test(mysum(range(11)) == 55)
 print("\nTest for mysum completed\n")
 
+# 7.4 the while statement
 def sum_to(n):
     """Return the sum of  1 + 2 + 3 ... n"""
     ss = 0
@@ -49,11 +50,34 @@ def sum_to(n):
 print("\nStarting test for sum_to")
 test(sum_to(4) == 10)
 test(sum_to(1000) == 500500)
-print("\Test completed for sum_to\n")
+print("\nTest completed for sum_to\n")
+
+
+# 7.7
+def num_digits(n):
+    count = 0
+    while n != 0:
+        count = count + 1
+        n = n // 10
+    return count
+
+print("\nStarting test for num_digits\n")
+test(num_digits(710) == 3)
+test(num_digits(1124) == 4)
+test(num_digits(710) == 3)
+print("\nTest for num_digits completed\n")
+
+# 7.8 Abbreviated assignment
+
+count = 0
+count += 1
+count += 3
+count -= 4
 
 # 7.10 tables
 print("\nSquare root table")
 for i in range(2, 10):
     print(i, "\t", i**2)
 
-# 7.11 two
+
+
