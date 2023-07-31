@@ -79,5 +79,33 @@ print("\nSquare root table")
 for i in range(2, 10):
     print(i, "\t", i**2)
 
+# 7.11 Two dimensional tables
+print("\nStarting 7.11\n")
+
+for i in range (1,10):
+    print(i, end="  ")
+
+print("\n\n7.11 finished")
+
+# 7.12
+
+print("\nStarting 7.12\n")
+
+def print_multiples(n):
+    for i in range(1, 10):
+        print(n * i, end="\t")
+    print()
+
+print("\n7.12 end\n")
+
+# print a multiplication table
+print("\nStarting 7.12\n")
+
+for i in range(1, 7):
+    print_multiples(i)
+
+print("\n7.12 end\n")
+
+#  7.13
 
 
