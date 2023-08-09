@@ -87,7 +87,7 @@ for i in range (1,10):
 
 print("\n\n7.11 finished")
 
-# 7.12
+# 7.12 Encapsulation
 
 print("\nStarting 7.12\n")
 
@@ -106,6 +106,74 @@ for i in range(1, 7):
 
 print("\n7.12 end\n")
 
-#  7.13
+# 7.15 The Break Statement
+print("Staring 7.15 \n")
+
+for i in [10, 2, 24, 13, 3, 7, 8]:
+    if i % 2 == 1:
+        break # Break loop if number in sequence is odd.
+    print(i)
+
+print("\n7.15 complete.\n")
+
+"""
+# 7.17 Break statement example
+
+print("\nStarting 7.17 example.\n")
+
+import random
+rng = random.Random()
+number = rng.randrange(1, 1000)
+
+guesses = 0
+msg = " "
+
+while True:
+    guess = int(input("\nGuess my number between 1 and 1000:"))
+    guesses += 1
+    if guess > number:
+        msg += str(guess) + " is too high.\n"
+        print(msg)                                                  # Added this so it would work in the CLI
+    elif guess < number:
+        msg += str(guess) + " is too low.\n"
+        print(msg)
+    else:
+        break
+
+input("\n\nGreat, you got it in {0} guesses!\n\n".format(guesses))
+
+print("\n7.17 completed.\n")
+"""
+# 7.18 Continue Statement
+print("\nStarting 7.18 example.\n")
+
+students = [("Vusi", ["Maths", "CompSci", "Stats"]),
+    ("Jess", ["CompSci", "Accounting", "Economics", "Management"]),
+    ("Sarah", ["InfSys", "Accounting", "Economics", "CommLaw"]),
+    ("Zuki", ["Sociology", "Economics", "Law", "Stats", "Music"])]
+
+for (name, subjects) in students:
+    print(name, "takes", len(subjects), "courses.")
+
+
+# experiment with param naming
+for (nothing, something) in students:
+    print(nothing, something)
+
+# print the number of students taking Economics.
+sz = 0
+for (name, subjects) in students:
+    for s in subjects:
+        if s == "Economics":        # Ran into issue where I was calling subjects instead of S in subjects.
+            sz += 1
+print(sz, "students are taking Economics")
+
+
+
+print("\n7.18 completed")
+
+
+
+
 
 
