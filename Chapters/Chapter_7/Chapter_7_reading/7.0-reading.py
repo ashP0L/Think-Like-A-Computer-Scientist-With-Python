@@ -79,7 +79,7 @@ print("\nSquare root table")
 for i in range(2, 10):
     print(i, "\t", i**2)
 
-<<<<<<< HEAD
+
 # 7.11 Two dimensional tables
 print("\nStarting 7.11\n")
 
@@ -175,8 +175,5 @@ print("\n7.18 completed")
 
 
 
-
-=======
->>>>>>> master
 
 
