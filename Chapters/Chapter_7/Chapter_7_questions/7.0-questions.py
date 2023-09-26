@@ -142,5 +142,17 @@ print(sqrt(25.0))
 print(sqrt(81))
 test(sqrt(25.0) == 5.00)
 
-# 8 
-""""""
+# 8 8. Trace the execution of the last version of print_mult_table and figure out how it
+# works.
+
+print("\n Print_mult_table executes as follows:")
+print("\n\t1. Int n is defined at start of execution.\n\t ")
+print("\n\t2. The function will loop for each number in i (10), multiplying n by i and printing the result. ")
+
+# 9  Write a function print_triangular_numbers(n) that prints out the first n tri-angular numbers.
+
+def print_triangles(n):
+    for i in range(1, n+1):
+        print(((i**2)+2)/2)
+
+print_triangles(5)
