@@ -150,9 +150,30 @@ print("\n\t1. Int n is defined at start of execution.\n\t ")
 print("\n\t2. The function will loop for each number in i (10), multiplying n by i and printing the result. ")
 
 # 9  Write a function print_triangular_numbers(n) that prints out the first n tri-angular numbers.
-
+print("\nStarting question 9.")
 def print_triangles(n):
+    sum = 0
     for i in range(1, n+1):
-        print(((i**2)+2)/2)
+        sum += i
+        print(i, "\t", sum)
 
 print_triangles(5)
+
+print("\nQuestion 9 completed.")
+
+# 10 Write a function, is_prime, which takes a single integer argument and returns True
+# when the argument is a prime number and False otherwise.
+print("\nStarting question 10.")
+def is_prime(n):
+    if n % 2 == 1:
+        return True
+    else:
+        return False
+
+test(is_prime(11))
+test(not is_prime(35))
+test(is_prime(19911121))
+
+print("\Question 10 completed.")
+
+
