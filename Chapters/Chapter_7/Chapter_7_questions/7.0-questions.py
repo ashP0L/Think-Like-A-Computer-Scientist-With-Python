@@ -1,4 +1,5 @@
 # Chapter 7 exercises
+import turtle
 
 # Test suite
 import sys
@@ -174,6 +175,20 @@ test(is_prime(11))
 test(not is_prime(35))
 test(is_prime(19911121))
 
-print("\Question 10 completed.")
+print("\nQuestion 10 completed.")
+
+print("\nStarting question 14.\n")
+def num_digits2(x):
+    n = abs(x)
+    count = 0
+    if n == 0:
+        return 1
+    while n != 0:
+        count = count + 1
+        n = n // 10
+        print(n)
+    return count
 
 
+test(num_digits2(0) == 1)
+test(num_digits2(-12345) == 5)
